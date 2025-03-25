@@ -1,0 +1,16 @@
+{
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "C_Cpp.formatting": "clangFormat",
+    "cSpell.words": [
+        "Gomoku",
+        "GTEST",
+        "pthread"
+    ],
+}
