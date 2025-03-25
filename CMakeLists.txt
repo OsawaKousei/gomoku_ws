@@ -1,18 +1,27 @@
 cmake_minimum_required(VERSION 3.10)
-project(GomokuLib VERSION 1.0.0 LANGUAGES CXX)
+project(Gomoku VERSION 0.1.0)
 
-# C++11以上を要求
-set(CMAKE_CXX_STANDARD 11)
+# C++標準の設定
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# インクルードディレクトリを設定
+# インクルードディレクトリの設定
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# ソースファイルを収集
-file(GLOB_RECURSE SOURCES "src/GomokuLib/*.cpp")
+# GomokuLibのライブラリ作成
+add_library(GomokuLib STATIC)
 
-# ライブラリをビルド
-add_library(GomokuLib STATIC ${SOURCES})
+# GomokuLibのソースファイルを取得
+include(src/GomokuLib/CMakeLists.txt)
+
+# GomokuCLIの実行ファイル作成
+add_executable(GomokuCLI
+    src/GomokuCLI/main.cpp
+    src/GomokuCLI/GomokuCLI.cpp
+)
+
+# GomokuCLIがGomokuLibに依存
+target_link_libraries(GomokuCLI GomokuLib)
 
 # インストール設定
 install(TARGETS GomokuLib
