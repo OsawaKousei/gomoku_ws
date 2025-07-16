@@ -39,10 +39,10 @@ if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
-# サンプルアプリケーションの有効化
-option(BUILD_SAMPLES "Build sample applications" OFF)
-if(BUILD_SAMPLES)
-    add_subdirectory(samples)
+# GomokuGUIの有効化
+option(BUILD_GUI "Build GomokuGUI (Qt required)" ON)
+if(BUILD_GUI)
+    add_subdirectory(src/GomokuGUI)
 endif()
 
 # プロジェクト情報の出力
